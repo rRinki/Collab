@@ -1,0 +1,358 @@
+<script type="text/javascript"
+ src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+<script type="text/javascript"
+ src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
+
+ <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script
+ src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src= "js/app.js"></script>
+<script src ="js/logincontroller.js"></script>
+<script src ="js/rcontroller.js"></script>
+<script src ="js/blogcontroller.js"></script>
+<script src ="js/jobcontroller.js"></script>
+<script src ="js/forumcontroller.js"></script>
+<script type="text/javascript"
+ src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-cookies.js"></script>
+<!-- https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.4-build.3588/angular.min.js -->
+<!------ Include the above in your HEAD tag ---------->
+
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+/*author: Limon*/
+.navbar-nav .nav-link {
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #ff7700;
+}
+
+.navbar-nav .nav-link::before {
+    content: "";
+    position: absolute;
+    background: #ff7700;
+    width: 48%;
+    bottom: 0;
+    left: -48%;
+    z-index: 0;
+    transition: 0.6s;
+}
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    background: #ff7700;
+    width: 48%;
+    bottom: 0;
+    height: 0;
+    right: -48%;
+    z-index: 0;
+    transition: 0.6s;
+}
+
+
+.navbar-nav .nav-link:hover::before,
+.navbar-nav .nav-link.active::before {
+    height: 2px;left: 5%;
+    transition: 0.6s;
+}
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    height: 2px;right: -5%;
+    transition: 0.6s;
+}
+.footer-text h3{
+	color: #fff;
+	font-size: 20px;
+	font-weight: 500;
+	text-align: center;
+	border-bottom: 1px #CCC solid;
+}
+.footer-text p{
+	font-size: 16px;
+	font-weight: 400;
+	color: #FFFFFF;
+}
+.copyright p, p.brand-url{
+	color: #FFFFFF;
+	font-size: 17px;
+	font-weight: 400;
+}
+.brand-dtls a{
+	color: #FFF;
+	font-size: 20px;
+	text-decoration: none;
+}
+.footer_grid_sec_wrap a {
+	color: #ffffff;
+	text-decoration: none !important;
+	background-color: transparent;
+}
+.powred_by{
+	font-size: 18px;
+}
+.powred_by a {
+	font-size: 18px;
+	color: #FFF;
+	text-decoration: none !important;
+}
+.footer_details_section {
+	color: #fff;
+	font-size: 15px;
+}
+.footer_details_section a {
+	color: #eee;
+	text-decoration: none;
+}
+.footer_wrap_box_grid {
+	width: 100%;
+	display: inline-block;
+	padding: 20px 0px;
+}
+.footer_grid_list h4, .footer_grid_list h5 {
+	color: #eee !important;
+	font-size: 17px;
+	font-weight: 600;
+	line-height: 26px;
+}
+.footer_grid_list ul {
+	margin: 0;
+	padding: 0;
+	padding-left: 0px;
+	list-style: none;
+}
+.media_team_list_grid {
+	border-left: 2px solid rgba(255, 255, 255, 0.22);
+	padding-left: 10px !important;
+}
+.footer_grid_list ul {
+	list-style: none;
+}
+.footer_team_list {
+	margin: 0 0 5px 0;
+}
+.footer_team_list dt {
+	width: 120px !important;
+	text-align: left !important;
+	font-size: 15px;
+}
+.horizantal_line_sec dt {
+	float: left;
+	width: 160px;
+	overflow: hidden;
+	clear: left;
+	text-align: right;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.footer_team_list dd {
+
+	margin-left: 120px;
+	font-size: 15px;
+}
+.foot-links li {
+	width: 130px;
+	display: inline-block;
+	font-size: 15px;
+}
+.sambaddata p{
+	margin-bottom: 10px;
+}
+span.small-reg-no{
+	display: none;
+}
+.links_imp ul.linkas{
+	list-style: none;
+	text-decoration: none;
+}
+.links_imp ul.linkas li{
+	list-style: none;
+	display: inline-block;
+	padding: 10px 20px;
+	border: 1px #FFF solid;
+	border-radius: 5px;
+	margin-right: 5px;
+	cursor: pointer;
+}
+.links_imp ul.linkas li:hover{
+	background: #f37120;
+	transition: 0.5s all ease;
+}
+.links_imp ul.linkas li:hover a{
+	color: #222;
+}
+.first-content p{
+	padding: 10px;
+}
+.second-images img{
+	height: 200px;
+	width: 100%;
+	object-fit: cover;
+	display: block;
+}
+</style>
+   
+   
+
+    <title>Collaboration!</title>
+  </head>
+  <body ng-app="frontApp">
+
+  	<!-- nav-bar-area-start -->
+  	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+
+    <!-- ====================nav-left-site==================== -->
+  	<a class="navbar-brand" href="#">Collaboration</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+    <!-- ====================nav-middle-site==================== -->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav m-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#/aboutus">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#/register">Register</a>
+      </li>
+      <li class="nav-item">
+        <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Blogs
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">All Blogs</a>
+    <a class="dropdown-item" href="#">My Blogs</a>
+    <a class="dropdown-item" href="#/addblog">Add Blogs</a>
+  </div>
+</div>
+      </li>
+     
+      <li class="nav-item">
+        <a class="nav-link" href="#/contactus">Contact Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#/addjob">Jobs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#/addforum">Forum</a>
+      </li>
+      <li class="nav-list-item" ng-show="$rootScope.loggeduser.cust_Role=='Admin'">
+                <a href="#" class="nav-link"></a>
+            </li>
+    </ul>
+    
+    <!-- ====================nav-right-site==================== -->
+    <ul class="navbar-nav  my-2 my-lg-0">
+      <a class="btn btn-outline-success my-2 my-sm-0" href="#/login" role="button">Login</a>
+    </ul>
+  </div>
+  </div>
+</nav>
+<div style ="min-height:1000px"ng-view></div>
+
+<div class="container-fluid footer-bg mt-1" style="background: #0b3c82">
+	<div class="footer_panel_box footer_details_section">
+		<div class="container hidden-xs">
+			<div class="footer_wrap_box_grid">
+				<div class="row">
+					<div class="col-md-8">
+						<div class="row">
+							<div class="col-md-5 footer_grid_list">
+								<h4>Team Member</h4>
+								<ul class="media_team_list_grid">
+									<li>
+										<dl class="horizantal_line_sec footer_team_list">
+											<dt>CEO</dt>
+											<dd>Name</dd>
+										</dl>
+										<dl class="horizantal_line_sec footer_team_list">
+											<dt>Director</dt>
+											<dd>Name</dd>
+										</dl>
+									</li>
+									<li>
+										<div class="flex row">
+											<div class="col-sm-12 sambaddata">
+												<h5>Member</h5>
+												<p>Member 1</p>
+												<p>Member 2</p>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="col-md-7 col-sm-7">
+								<div class="footer_grid_list">
+									<h4>Address</h4>
+									<ul class="media_team_list_grid">
+										<li>
+											<strong><p>Company Name</p></strong>
+											<strong style="display:block"><i class="fa fa-map-marker mr-2"></i>Company Address</strong>
+											<span class="kd-icons"><i class="fa fa-phone-square mr-2" aria-hidden="true"></i></span>00000000
+											<p style="font-size: 15px;"><i class="fa fa-envelope mr-2"></i> example@email.com</p>
+										</li>
+									</ul>
+								</div>
+								<div class="col-md-12 col-sm-12">
+									<div class="links_imp">
+										<ul class="linkas">
+											<li><a href="#">About Us</a></li>
+											<li><a href="#">Advertisement</a></li>
+				
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 footer_grid_list list_link">
+						<h4>Quick Links </h4>
+						<ul class="media_team_list_grid foot-links">
+							<li><a href="http://karnaliaawaj.com">Home</a></li>
+							<li><a href="#">Link</a></li>
+							<li><a href="#">Link</a></li>
+							<li><a href="#">Link</a></li>
+							<li><a href="#">Link</a></li>
+							<li><a href="#">Link</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid footer_sec_grid2" style="background: #082b5d">
+		<div class="footer_copyright_sec">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-6 mt-2 mt-sm-2 text-center text-white">
+						<p class="h6">©2019copyright, All Rights Reserved.</p>
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-6 mt-2 mt-sm-2 text-center text-white">
+						<div class="powred_by">
+							Powered By : <a href="https://toplinetech.com.np" target="_blank"><b>T</b>op<b>L</b>ine <b>T</b>echnology</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  </body>
+</html>

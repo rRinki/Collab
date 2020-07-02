@@ -1,0 +1,9 @@
+com\niit\CollaborationMiddle\Config\Controller\BlogController.class
+com\niit\CollaborationMiddle\Config\Controller\ForumController.class
+com\niit\CollaborationMiddle\Config\Controller\LoginController.class
+com\niit\CollaborationMiddle\Config\Controller\JobsController.class
+com\niit\CollaborationMiddle\Config\Controller\EmployerController.class
+com\niit\CollaborationMiddle\Config\WebConfig.class
+com\niit\CollaborationMiddle\Config\Controller\ForumAnswersController.class
+com\niit\CollaborationMiddle\Config\Controller\BlogComment.class
+com\niit\CollaborationMiddle\Config\DispatcherServlet.class

@@ -1,0 +1,119 @@
+<style>
+body {
+	margin: 0;
+	padding: 0;
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+	font-family: sans-serif;
+	background-color: #25274d;
+	}
+
+}
+.Loginbox{
+	width: 320px;
+	height: 420px;
+	background: #111;
+	color: #fff;
+	top: 50%;
+	left: 50%;;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	box-sizing: border-box;
+	padding: 70px 30px;
+}
+.avatar{
+	width: 100px;
+	height: 100px;
+	border-right-style:  50%;
+	position: absolute;
+	top: -50px;
+	left: calc(50% - 50px);
+
+}
+h1{
+	margin: 0;
+	padding: 0 0 20px;
+	text-align: center;
+	font-size: 22px;
+
+
+}
+.Loginbox p{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+}
+.Loginbox input{
+	width: 100%;
+	margin-bottom: 20px;
+}
+.Loginbox input[type="text"],  input[type="password"]
+{
+	border: none;
+	border-bottom: 1px  solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+
+}
+.Loginbox input[type="submit"]
+{
+	border: none;
+	outline: none;
+	height: 40px;
+	background: #ff9b00;
+	color: #dddcd;
+	font-size: 18px;
+	border-radius: 20px;
+}
+.Loginbox input[type="submit"]:hover
+{
+	cursor: pointer;
+	background:  #ff4f6d;
+	color: #000;
+
+}
+.Loginbox a{
+	 text-decoration: none;
+	 font-size: 12px;
+	 line-height: 20px;
+	 color: darkgrey;
+
+}
+.Loginbox a:hover
+{
+	color: #ff4f6d;
+
+}
+.container
+{
+
+}
+
+</style>
+<div class="container" ng-controller="lcontroller as l">
+	<div class="row">
+	
+	<div class="col-md-4 banner-sec">
+	<h2>Login</h2>
+				<h4>Welcome! Login to Unlock the services</h4>
+				</div>
+				<div class="col-md-8 login-sec">
+<div class="Loginbox">
+		<img src="https://www.vijayyadav.tk/wp-content/uploads/2020/05/avatar.png" class="avatar">
+		<h1>Login Here</h1>
+		<form role ="form" ng-submit="l.loginUser()">
+			<p>Username</p>
+			<input type="email" name="email" placeholder="Email" tabindex="4" ng-model="l.customer.cus_Email">
+			<p>Password</p>
+			<input type="password" name="password" placeholder="Enter Password" tabindex="5" ng-model="l.customer.cust_Password">
+			<input type="submit" value="Login" >
+			
+		</form>
+	</div>
+	</div>
+				</div>
+				</div>
