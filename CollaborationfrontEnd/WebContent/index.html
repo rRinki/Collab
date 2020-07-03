@@ -227,13 +227,15 @@ span.small-reg-no{
       </li>
       <li class="nav-item">
         <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <button class="btn dropdown-toggle" dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Blogs
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">All Blogs</a>
+    <a class="dropdown-item" href="#/viewallblogs">All Blogs</a>
     <a class="dropdown-item" href="#">My Blogs</a>
     <a class="dropdown-item" href="#/addblog">Add Blogs</a>
+    <a class="dropdown-item" href="#/blogapproval">Approve Blogs</a>
+    
   </div>
 </div>
       </li>
@@ -242,10 +244,29 @@ span.small-reg-no{
         <a class="nav-link" href="#/contactus">Contact Us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#/addjob">Jobs</a>
+        <div class="dropdown">
+  <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Jobs
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#/alljobs">View all Jobs</a>
+    <a class="dropdown-item" href="#">My Jobs</a>
+    <a class="dropdown-item" href="#/addjob">Add Jobs</a>
+  </div>
+</div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#/addforum">Forum</a>
+       <div class="dropdown">
+  <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Forum
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#/allforum">View all Forum</a>
+    <a class="dropdown-item" href="#">My Forum</a>
+    <a class="dropdown-item" href="#/addforum">Add Forum</a>
+    
+  </div>
+</div>
       </li>
       <li class="nav-list-item" ng-show="$rootScope.loggeduser.cust_Role=='Admin'">
                 <a href="#" class="nav-link"></a>

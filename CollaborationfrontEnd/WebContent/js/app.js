@@ -19,12 +19,16 @@ myApp.config(function($routeProvider) {
 		templateUrl : "login.html"
 	}).when("/addblog", {
 		templateUrl : "blogs.html"
-	}).when("/viewblog", {
-		templateUrl : "viewblog.html"
+	}).when("/viewallblogs", {
+		templateUrl : "viewallblogs.html"
 	}).when("/myblog", {
 		templateUrl : "myblog.html"
 	}).when("/blogapproval", {
-		templateUrl : "approveblog.html"		
+		templateUrl : "approveblog.html"
+	}).when("/alljobs", {
+		templateUrl : "viewalljobs.html"
+	}).when("/allforum", {
+		templateUrl : "viewallforum.html"
 	});
 
 });
@@ -34,8 +38,8 @@ myApp.run(function($rootScope, $location, $http, $route) {
 		var status = $rootScope.loginstatus;
 		var role = $rootScope.loggeduser;
 		var emp_page = [];
-		var employer_page = ['/addblog', '/addforum', '/addjob', ];
-		var admin_page = [];
+		var employer_page = ['/addblog', '/addforum', '/addjob', '/alljobs','/allforum'];
+		var admin_page = ['/blogapproval'];
 		var currenturl = $location.path();
 		var isemppage = $.inArray(currenturl, emp_page) >= 0;
 		var isemployerpage = $.inArray(currenturl, employer_page) >= 0;

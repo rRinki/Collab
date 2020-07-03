@@ -21,7 +21,7 @@ angular
 					function createUser() {
 						$http
 								.post(
-										'http://localhost:8082/CollaborationMiddleWare/jobs/addjobs',
+										'http://localhost:8080/CollaborationMiddleWare/jobs/addjobs',
 										mydata.jobs)
 								.then(function(response) {
 									alert("Jobs Added Successfully");
@@ -34,7 +34,7 @@ angular
 					function getUsers(){
 						$http
 						.get(
-						'http://localhost:8082/CollaborationMiddleWare/jobs/adminapproval')
+						'http://localhost:8080/CollaborationMiddleWare/jobs/adminapproval')
 						.then(function(response) {
 							mydata.customers=null;
 						}, function(errresponse) {

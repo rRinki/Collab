@@ -46,22 +46,18 @@
 
 </style>
 <body>
-<div class="container"  ng-controller="blogcontrol as b">
+<div class="container"  ng-controller="forumcontrol as b">
 	<div class="row">
 		
 			<div class="col-4">
-				<div class="card" ng-repeat="cust in b.customers">
+				<div class="card" ng-repeat="cust in f.customers">
 				
 
 					<div class="card-body">
 						<div class="col-12">
-							<p class="card-title" data-toggle="tooltip">Blog Title:{{cust.blog_Name}}</p>
+							<p class="card-title" data-toggle="tooltip">Forum Title:{{cust.forum_Title}}</p>
 						</div>
-						<div class="col-12">
-							<p class="card-text">
-								Content :<span class="mytext">{{cust.blog_Content}}</span>
-							</p>
-						</div>
+						
 					
 					</div>
 				</div>

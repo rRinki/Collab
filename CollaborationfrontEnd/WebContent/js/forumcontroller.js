@@ -13,7 +13,7 @@ angular
 					function createUser() {
 						$http
 								.post(
-										'http://localhost:8082/CollaborationMiddleWare/forum/addforum',
+										'http://localhost:8080/CollaborationMiddleWare/forum/addforum',
 										mydata.forum)
 								.then(function(response) {
 									alert("Forum Added Successful");
@@ -26,7 +26,7 @@ angular
 					function getUsers(){
 						$http
 						.get(
-						'http://localhost:8082/CollaborationMiddleWare/forum/allforum')
+						'http://localhost:8080/CollaborationMiddleWare/forum/allforum')
 						.then(function(response) {
 							mydata.customers=null;
 						}, function(errresponse) {

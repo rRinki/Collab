@@ -46,23 +46,42 @@
 
 </style>
 <body>
-<div class="container"  ng-controller="blogcontrol as b">
+<div class="container"  ng-controller="jobcontrol as j">
 	<div class="row">
 		
 			<div class="col-4">
-				<div class="card" ng-repeat="cust in b.customers">
+				<div class="card" ng-repeat="cust in j.customers">
 				
 
 					<div class="card-body">
 						<div class="col-12">
-							<p class="card-title" data-toggle="tooltip">Blog Title:{{cust.blog_Name}}</p>
+							<p class="card-title" data-toggle="tooltip">Job Title:{{cust.job_Titile}}</p>
 						</div>
 						<div class="col-12">
 							<p class="card-text">
-								Content :<span class="mytext">{{cust.blog_Content}}</span>
+								Description :<span class="mytext">{{cust.job_Description}}</span>
 							</p>
 						</div>
-					
+						<div class="col-12">
+							<p class="card-text">
+								Vaccancy : <span class="mytext">{{cust.no_vaccany}}</span>
+							</p>
+						</div>
+						<div class="col-12">
+							
+								<p class="card-text">
+									Salary:<span class="mytext">{{cust.job_Salary}}</span>
+								</p>
+							
+							
+								<p class="card-text">
+									Last Date:<span class="mytext"> {{cust.last_Date}}
+										</span>
+								</p>
+							
+						</div>
+
+
 					</div>
 				</div>
 			</div>

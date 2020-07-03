@@ -23,7 +23,7 @@ angular
 					function createUser() {
 						$http
 								.post(
-										'http://localhost:8082/CollaborationMiddleWare/customer',
+										'http://localhost:8080/CollaborationMiddleWare/customer',
 										mydata.customer)
 								.then(function(response) {
 									alert("Registration Successful");
@@ -36,7 +36,7 @@ angular
 					function getUsers(){
 						$http
 						.get(
-						'http://localhost:8082/CollaborationMiddleWare/customer')
+						'http://localhost:8080/CollaborationMiddleWare/customer')
 						.then(function(response) {
 							mydata.customers=null;
 						}, function(errresponse) {

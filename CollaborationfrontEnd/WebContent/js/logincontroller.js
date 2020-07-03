@@ -25,7 +25,7 @@ angular.module('frontApp').controller(
 
 			function loginUser() {
 				$http.post(
-						'http://localhost:8082/CollaborationMiddleWare/login',
+						'http://localhost:8080/CollaborationMiddleWare/login',
 						mydata.customer).then(function(response) {
 					alert("Login Successful");
 					mydata.onlineuser=response.data;
